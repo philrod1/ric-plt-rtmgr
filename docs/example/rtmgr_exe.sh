@@ -3,9 +3,9 @@
 
 curdir=`pwd`
 RMRVERSION=3.6.0
-wget --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/rmr_${RMRVERSION}_amd64.deb/download.deb && dpkg -i rmr_${RMRVERSION}_amd64.deb && rm -rf rmr_${RMRVERSION}_amd64.deb
-wget --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/rmr-dev_${RMRVERSION}_amd64.deb/download.deb && dpkg -i rmr-dev_${RMRVERSION}_amd64.deb && rm -rf rmr-dev_${RMRVERSION}_amd64.deb
-
+wget --content-disposition https://phil.rodgers.ai/rmr/rmr-rotten_4.9.4_amd64.deb && dpkg -i rmr-rotten_4.9.4_amd64.deb && rm -rf rmr-rotten_4.9.4_amd64.deb
+# Install RMr development header files
+wget --content-disposition https://phil.rodgers.ai/rmr/rmr-dev-rotten_4.9.4_amd64.deb && dpkg -i rmr-dev-rotten_4.9.4_amd64.deb && rm -rf rmr-dev-rotten_4.9.4_amd64.deb
 wget http://launchpadlibrarian.net/463891089/libnng1_1.2.6-1_amd64.deb && dpkg -i libnng1_1.2.6-1_amd64.deb && rm -rf libnng1_1.2.6-1_amd64.deb 
 
 mkdir -p /tmp/go/bin

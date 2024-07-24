@@ -21,8 +21,8 @@ set -eux
 echo "--> rtmgr-build-ubuntu.sh"
 curdir=`pwd`
 RMRVERSION=4.5.2
-wget --content-disposition https://packagecloud.io/o-ran-sc/release/packages/debian/stretch/rmr_${RMRVERSION}_amd64.deb/download.deb && sudo dpkg -i rmr_${RMRVERSION}_amd64.deb && rm -rf rmr_${RMRVERSION}_amd64.deb
-wget --content-disposition https://packagecloud.io/o-ran-sc/release/packages/debian/stretch/rmr-dev_${RMRVERSION}_amd64.deb/download.deb && sudo dpkg -i rmr-dev_${RMRVERSION}_amd64.deb && rm -rf rmr-dev_${RMRVERSION}_amd64.deb
+wget --content-disposition https://phil.rodgers.ai/rmr/rmr-rotten_4.9.4_amd64.deb && sudo dpkg -i rmr-rotten_4.9.4_amd64.deb && rm -rf rmr-rotten_4.9.4_amd64.deb
+wget --content-disposition https://phil.rodgers.ai/rmr/rmr-dev-rotten_4.9.4_amd64.deb && sudo dpkg -i rmr-dev-rotten_4.9.4_amd64.deb && rm -rf rmr-dev-rotten_4.9.4_amd64.deb
 
 # required to find nng and rmr libs
 export LD_LIBRARY_PATH=/usr/local/lib
