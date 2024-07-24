@@ -28,9 +28,13 @@ FROM nexus3.o-ran-sc.org:10002/o-ran-sc/bldr-ubuntu20-c-go:1.0.0 as rtmgrbuild
 RUN apt update && apt install ca-certificates libgnutls30 -y
 # Install RMr shared library
 ARG RMRVERSION=4.9.4
-RUN wget --content-disposition https://phil.rodgers.ai/rmr/rmr-rotten_4.9.4_amd64.deb && dpkg -i rmr-rotten_4.9.4_amd64.deb && rm -rf rmr-rotten_4.9.4_amd64.deb
+RUN mkdir /deb
+COPY rmr_4.9.4_amd64.deb ./
+COPY rmr-dev_4.9.4_amd64.deb ./
+
+RUN dpkg -i rmr_4.9.4_amd64.deb && rm -rf rmr-dev_4.9.4_amd64.deb
 # Install RMr development header files
-RUN wget --content-disposition https://phil.rodgers.ai/rmr/rmr-dev-rotten_4.9.4_amd64.deb && dpkg -i rmr-dev-rotten_4.9.4_amd64.deb && rm -rf rmr-dev-rotten_4.9.4_amd64.deb
+RUN dpkg -i rmr-dev_4.9.4_amd64.deb && rm -rf rmr-dev_4.9.4_amd64.deb
 
 #ENV GOLANG_VERSION 1.16
 #RUN wget --quiet https://dl.google.com/go/go$GOLANG_VERSION.linux-amd64.tar.gz \
