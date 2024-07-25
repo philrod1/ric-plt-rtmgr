@@ -32,7 +32,7 @@ RUN mkdir /deb
 COPY rmr_4.9.4_amd64.deb ./
 COPY rmr-dev_4.9.4_amd64.deb ./
 
-RUN dpkg -i rmr_4.9.4_amd64.deb && rm -rf rmr-dev_4.9.4_amd64.deb
+RUN dpkg -i rmr_4.9.4_amd64.deb && rm -rf rmr_4.9.4_amd64.deb
 # Install RMr development header files
 RUN dpkg -i rmr-dev_4.9.4_amd64.deb && rm -rf rmr-dev_4.9.4_amd64.deb
 
